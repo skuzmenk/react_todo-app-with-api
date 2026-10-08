@@ -26,10 +26,10 @@ export const TodoFooter: React.FC<Props> = ({
       <a
         href="#/"
         className={classNames('filter__link', {
-          selected: filter === Filter.AllTest,
+          selected: filter === Filter.All,
         })}
         data-cy="FilterLinkAll"
-        onClick={() => onFilterChange(Filter.AllTest)}
+        onClick={() => onFilterChange(Filter.All)}
       >
         All
       </a>

@@ -19,9 +19,8 @@ export const TodoHeader: React.FC<Props> = ({
   onTitleChange,
   onSubmit,
   handleToggle,
-}) =>
-{
-const hasActiveTodos = todos.find(todo => !todo.completed);
+}) => {
+  const hasActiveTodos = todos.find(todo => !todo.completed);
 
   return (
     <header className="todoapp__header">

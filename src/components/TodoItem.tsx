@@ -6,8 +6,7 @@ import { Todo } from '../types/Todo';
 
 type Props = {
   todo: Todo;
-  deletingTodoId: number | null;
-  updatingTodoId: number | null;
+  processingTodosIds: number[];
   onToggle: (todo: Todo) => void;
   onDelete: (todoId: number) => void;
   onRename: (todoId: number, title: string) => Promise<boolean>;
@@ -15,8 +14,7 @@ type Props = {
 
 export const TodoItem: React.FC<Props> = ({
   todo,
-  deletingTodoId,
-  updatingTodoId,
+  processingTodosIds,
   onToggle,
   onDelete,
   onRename,
@@ -82,7 +80,7 @@ export const TodoItem: React.FC<Props> = ({
     }
   };
 
-  const isLoading = deletingTodoId === todo.id || updatingTodoId === todo.id;
+  const isLoading = processingTodosIds.includes(todo.id);
 
   return (
     <div data-cy="Todo" className={`todo ${todo.completed ? 'completed' : ''}`}>
